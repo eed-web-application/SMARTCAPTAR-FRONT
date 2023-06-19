@@ -1,0 +1,23 @@
+.addUser{
+  display: "flex";
+}
+.inline-flex-parent {
+  display: inline-flex;
+}
+.parent{
+    background-color: #812130;
+    border: none;
+    color: white;
+    margin: 5px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.deleteSelectedProject{
+  background-color: #812130;
+ 
+  color: white;
+  border:none;
+  font-weight: bold;
+
+}

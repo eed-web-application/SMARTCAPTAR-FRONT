@@ -1,0 +1,37 @@
+.browse {
+    font-weight: bold;
+    display: inline-block;
+    color: #812130;
+  }
+  .info {
+    color: #6f6c78;
+    font-size: 12px;
+  }
+  
+  .heading {
+    font-size: 25px;
+  }
+  .uploadBox{
+    padding: 2em;
+    border: 2px dashed #812130;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .upload-icon {
+    font-size: 2em;
+    color: #812130;
+  }
+  
+  .fileIcon {
+    display: none;
+  }
+  
+  .filename {
+    font-size: 12px;
+  }
+  

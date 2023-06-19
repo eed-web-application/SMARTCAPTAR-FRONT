@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.login {
+  font-family: "Lato", sans-serif;
+  background: #efefef;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * Form
+ */
+
+.login_form {
+  border-radius: 12px;
+  width: 80vw;
+  margin-top: -20vh;
+  background-color: #f6f9fc;
+  box-shadow: 0px 14px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login_form_logo {
+  width: 30%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.login_form_title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+}
+
+.login_form_field {
+  color: #131313;
+  margin: 2% 0;
+  width: 60%;
+}
+
+.login_form_field_title {
+  font-size: 0.8rem;
+}
+
+.login_form_field_input {
+  margin: 2% 0;
+  padding: 1vh 8vw;
+  max-width: 80%;
+  font-size: 16px;
+  border-bottom: 3px solid rgba(19, 19, 19, 0.5);
+  border-top: 2px solid transparent;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.login_form_field_input > input {
+  width: 100%;
+  background-color: #f6f9fc;
+  color: #131313;
+}
+
+.login_form_field_input > input:focus {
+  outline: none;
+}
+
+.login_form_field_input_icon {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  background-color: rgba(0, 0, 0, 0);
+  width: 1rem;
+  height: 1rem;
+}
+
+.login_form_button {
+  padding: 1vh 5vw;
+  margin: 2% 0 10% 0;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-size: 25px;
+  background-color: #871628f5;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login_form_button:hover {
+  opacity: 90%;
+}
+
+.login_form_button:active {
+  opacity: 80%;
+}
+
+/*
+ * Footer
+ */
+
+.login_waves {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 10vh;
+}
+
+@media screen and (min-width: 500px) {
+  .login_form {
+    width: 50vw;
+  }
+
+  .login_form_field_title {
+    font-size: 1rem;
+  }
+
+  .login_form_field_input {
+    padding: 1vh 5vw;
+    max-width: 100%;
+  }
+
+  .login_form_field_input_icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .login_form {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .login_form {
+    width: 30vw;
+  }
+
+  .login_form_logo {
+    width: 40%;
+  }
+
+  .login_form_field_title {
+    font-size: 1rem;
+    padding-top: 5%;
+  }
+
+  .login_form_field_input > input {
+    font-size: 18px;
+  }
+
+  .login_form_field_input {
+    padding: 1vh 3vw;
+  }
+
+  .login_form_button {
+    padding: 1vh 7vw;
+    margin: 2% 0 10% 0;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .login_form_field_input {
+    padding: 1vh 2vw;
+  }
+}

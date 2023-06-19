@@ -1,0 +1,10 @@
+.rejectedTable{
+    margin-top: -17%;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.statusColor{
+    color: rgb(186, 1, 1);
+    font-weight: 900;
+}

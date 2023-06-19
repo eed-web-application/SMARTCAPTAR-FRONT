@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+.searchTerm {
+  border: 2px solid grey;
+  padding: 15px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+  margin-left: 7px;
+}
+
+.searchTerm:focus{
+  color: #812130;
+}
+.dropdown{
+    border: 2px solid grey;
+    padding: 4px;
+    border-radius: 5px;
+    outline: none;
+    height:34
+   
+}

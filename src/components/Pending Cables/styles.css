@@ -1,0 +1,33 @@
+.columnSmall {
+    padding:20px;
+    gap:10px
+     /* Should be removed. Only for demonstration */
+   }
+   
+    .middleSmall {
+     width: 0%;
+   }
+   .leftSmall{
+     width:50%;
+   }
+   
+   .rightSmall {
+     width: 50%;
+   }
+   
+   /* Clear floats after the columns */
+   .rowSmall:after {
+     content: "";
+     display: table;
+     clear: both;
+   }
+
+   .pendingStatusColor{
+      color: rgb(217, 189, 9);
+      font-weight: 900;
+   }
+
+  .tableNew{
+    height: 200px;
+    overflow:auto
+  }

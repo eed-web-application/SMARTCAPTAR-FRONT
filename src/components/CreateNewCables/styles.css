@@ -1,0 +1,237 @@
+.tableDivCablesBulkUpload {
+  background-color: white;
+  border-radius: 10px;
+  overflow: scroll;
+  max-width: 1000px;
+  max-height: 735px;
+  max-width:1200px;
+  overflow: scroll;
+  border: solid 3px #808080;
+}
+  .TableTitle{
+      padding:20px;
+  color: #797878;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  }
+
+  .errormessage{
+    color: #c90000;
+    font-weight:bolder;
+    font-size: 13px;
+    display: inline-block;
+  }
+  .CreateNewTableContainer::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+  
+  .CreateNewTableContainer::-webkit-scrollbar-track,
+  .CreateNewTableContainer::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+  }
+  
+  .CreateNewTableContainer > div > table {
+    table-layout: auto;
+    color: #797878;
+    text-transform: uppercase;
+    background-color: #ffffff;
+  }
+  
+  .CreateNewTableContainer > div > table > thead > tr > th {
+    text-align: left;
+    padding: 10px;
+    white-space: nowrap;
+  }
+  
+  .relative-parent {
+    position: relative;
+    /* Have some width if the input is empty */
+    min-width: 1em;
+    /* Adjust size to match the span */
+    width: min-content;
+    white-space: nowrap;
+  }
+  
+  .relative-parent > .size-calibration {
+    visibility: hidden;
+    /* Prevent the span from wrapping the text when input value has multiple words, or collapsing multiple spaces into one */
+    white-space: pre;
+  }
+  .relative-parent > .autosized-input {
+    width: 120px;
+  }
+  
+  .relative-parent > .autosized-input:focus {
+    outline: none;
+  }
+  
+  .relative-parent > .size-calibration,
+  .relative-parent > .autosized-input {
+    /* Normalize styles that the browser sets differently between spans and inputs. 
+    Ideally, use a "CSS reset" here. */
+    padding: 0;
+    color: #322e44;
+    /* Demonstrate that this works for input with custom styles */
+  }
+  .input {
+    
+          box-sizing: border-box;
+          height: 39px;
+          width:200px;
+          border: 2px solid #C4C4C4;
+          border-radius: 6px;
+          margin-left: 10px;
+          padding:2px;
+  }
+  .inputError{
+    
+    box-sizing: border-box;
+    height: 39px;
+    width:200px;
+    border: 2px solid #C4C4C4;
+    border-radius: 6px;
+    margin-left: 10px;
+    padding:2px;
+}
+  .openModal{
+    background-color: #812130; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .buttonModalCables{
+    background-color: #812130; /* Green */
+    border: none;
+    color: white;
+    margin:5px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+  }
+
+
+  .deletebtn{
+    background-color: #812130; /* Green */
+    border: none;
+    color: white;
+    margin:5px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .approveCables{
+    background-color: #812130; 
+    border: none;
+    color: white;
+    margin:5px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+  }
+  
+  .cablelisting {
+    background-color: #efefef;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 20vw auto;
+    grid-template-rows: 10vh auto;
+    grid-template-areas:
+      "sidebar navbar"
+      "sidebar main";
+  }
+  
+  
+  
+  
+  .cablelisting_container_feedback {
+    display: grid;
+    grid-template-columns: 1fr 10fr 3fr;
+    grid-template-areas: "title icon date";
+    align-items: center;
+  }
+  
+  .cablelisting_container_feedback_title {
+    padding: 10px 0px 20px 20px;
+    color: #322e44;
+    font-weight: bold;
+    font-size: 20px;
+    grid-area: title;
+  }
+  .cablelisting_container_feedback_icon {
+    width: 2%;
+    grid-area: icon;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .cablelisting_container_feedback_date {
+    grid-area: icon;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #797878;
+  }
+  
+  .cablelisting_container_feedback_right {
+    display: flex;
+    flex-direction: column;
+    color: #797878;
+  }
+  
+  .cablelisting_container_feedback_approver {
+    margin-left: 55px;
+  }
+  
+  .cablelisting_container_feedback_assigned {
+    margin-left: 65px;
+  }
+  
+  .cablelisting_container_feedback_description {
+    margin-left: 20px;
+    color: #797878;
+  }
+  
+  .cablelisting_container_feedback_box{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cablelisting_container_feedback_input {
+    background-color: #f5f5f5;
+    border: solid 3px #aed6fe;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 80%;
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+  .bulkUploadContainer{
+   margin-top:20;
+   margin-left:20;
+  }
+  
+  

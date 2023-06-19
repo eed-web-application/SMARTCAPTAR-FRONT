@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.profile {
+  background-color: #ffffff;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.profile_welcome {
+  font-size: 1.5rem;
+  margin-left:  3%;
+  font-weight: bold;
+  color: #585858;
+}
+
+.profile_tools {
+  display: flex;
+ 
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5vw;
+  font-size: 1.2rem;
+}
+
+.profile_tools > * {
+  margin: 0 5%;
+}
+
+.profile_tools_notification-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 10px;
+}
+
+.profile_tools_profile-img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.profile_tools_username {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #585858;
+  min-width: fit-content;
+}

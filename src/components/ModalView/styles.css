@@ -1,0 +1,22 @@
+.ModalWrapper{
+    display:grid;
+}
+.ModalItem{
+    display:inline-grid;
+    margin-top: 10px;
+}
+.ModalItemOne{
+    
+   
+}
+.modalDivider{
+    border: 5px solid #812130 !important;
+}
+.grid-container {
+    width:500px;
+    display: inline-grid;
+    grid-template-columns: 200px 200px;
+    padding:5px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }

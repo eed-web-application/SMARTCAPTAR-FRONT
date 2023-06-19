@@ -1,0 +1,625 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.cablelisting {
+	background-color: #efefef;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 14vw auto;
+	grid-template-rows: 10vh auto;
+	grid-template-areas:
+		"sidebar navbar"
+		"sidebar main";
+}
+ 
+.dashboard_sidebar {
+	grid-area: sidebar;
+}
+
+.dashboard_navbar {
+	grid-area: navbar;
+}
+
+.cablelisting_container {
+	grid-area: main;
+	display: flex;
+	flex-direction: column;
+}
+
+.cablelisting_container_feedback {
+	background-color: white;
+	width: 95%;
+	height: 27%;
+	border-radius: 10px;
+	margin: 10px 30px 20px 30px;
+}
+
+.cablelisting_container_feedback_header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cablelisting_container_feedback_header_left {
+	display: flex;
+	flex-direction: column;
+}
+
+.cablelisting_container_feedback_header_left_top {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.cablelisting_container_feedback_header_left_top_title {
+	padding: 10px 0px 20px 20px;
+	color: #322e44;
+	font-weight: bold;
+	font-size: 20px;
+	grid-area: title;
+}
+
+.cablelisting_container_feedback_header_left_top_icon {
+	width: 2%;
+	grid-area: icon;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+.cablelisting_container_feedback_header_left_top_date {
+	grid-area: date;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	color: #797878;
+}
+
+.cablelisting_container_feedback_header_left_bottom {
+	margin-left: 20px;
+	color: #797878;
+}
+
+.cablelisting_container_feedback_header_right {
+	display: flex;
+	flex-direction: column;
+	color: #797878;
+	margin-right: 30px;
+}
+
+.cablelisting_container_feedback_header_right_approver {
+	margin-left: 55px;
+	align-items: end;
+}
+
+.cablelisting_container_feedback_header_right_assigned {
+	margin-left: 65px;
+	align-items: end;
+}
+
+.cablelisting_container_feedback_box {
+	display: flex;
+	flex-direction: row;
+}
+
+.cablelisting_container_feedback_input {
+	background-color: #f5f5f5;
+	border: solid 3px #aed6fe;
+	border-radius: 5px;
+	margin-left: 20px;
+	width: 80%;
+	padding: 10px;
+	padding-bottom: 20px;
+}
+
+.cablelisting_container_datalist {
+	background-color: white;
+	width: 95%;
+	height: 66%;
+	border-radius: 10px;
+	margin: 0 30px 20px 30px;
+}
+.cablelisting_container_navigation {
+	background-color: white;
+	width: 50%;
+	height: 5%;
+	border-radius: 10px;
+	align-self: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.cablelisting_container_navigation_left,
+.cablelisting_container_navigation_right {
+	font-weight: bold;
+	font-size: 1rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+.cablelisting_container_navigation_left:hover,
+.cablelisting_container_navigation_right:hover {
+	color: #797878;
+	text-decoration: none;
+}
+
+.cablelisting_container_navigation_left {
+	border-right: 2px solid #797878;
+}
+.buttonProjects{
+	background-color: #812130; /* Green */
+	border: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 5px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	width:100px;
+	margin-top:10%;
+	
+  }
+  .centerWrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+  .project_card {
+	  position:relative;
+	  flex-direction: column;
+	  background-color: #ffffff;
+	  border-radius: 30px;
+	  height: 150px;
+	  width: 250px;
+	  margin:2%;
+  }
+
+  .button{
+	  top: 43%;
+	  left: 25%;
+	  position: absolute;
+	  z-index: 1;
+  }
+
+  .project_name {
+	text-align: center;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+  }
+
+  .project_cablecount {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: center;
+	top: 36%;
+	left: 25%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 15px;
+	z-index: 1;
+  }
+
+  .project_card2 {
+	position: absolute;
+	top: 15%;
+	left: 42%;
+	background-color: #ffffff;
+	border-radius: 30px;
+	height: 300px;
+	width: 250px;
+	z-index: 0;
+}
+
+.project_name2 {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: center;
+	top: 31%;
+	left: 44%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	z-index: 1;
+  }
+
+  .project_cablecount2 {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: center;
+	top: 36%;
+	left: 44%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 15px;
+	z-index: 1;
+  }
+
+  .project_calendar {
+		position: absolute;
+		top: 15%;
+		left: 62%;
+		background-color: #ffffff;
+		border-radius: 30px;
+		height: 300px;
+		width: 525px;
+		z-index: 0;
+}
+.team_members {
+		position: absolute;
+		top: 58%;
+		left: 23%;
+		background-color: #ffffff;
+		border-radius: 15px;
+		height: 310px;
+		width: 525px;
+		z-index: 0;
+}
+
+.messages {
+		position: absolute;
+		top: 58%;
+		left: 62%;
+		background-color: #ffffff;
+		border-radius: 15px;
+		height: 310px;
+		width: 525px;
+		z-index: 0;
+}
+
+.tm_title {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: center;
+	top: 61%;
+	left: 23%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 23px;
+	z-index: 1;
+}
+
+.tm_name {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: left;
+	top: 67%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	z-index: 1;
+
+}
+
+.tm_subheading {
+	left: 390px;
+	letter-spacing: 0;
+	color: #797878;
+	position: absolute;
+	text-align: left;
+	top: 70%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	z-index: 1;
+}
+
+.tm_line {
+	position: absolute;
+	top: 73%;
+	left: 29%;
+	background-color: #e8e8e8;
+	height: 2px;
+	width: 410px;
+	z-index: 1;
+}
+
+.tm_name2 {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: left;
+	top: 75%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	z-index: 1;
+
+}
+
+.tm_subheading2 {
+	left: 390px;
+	letter-spacing: 0;
+	color: #797878;
+	position: absolute;
+	text-align: left;
+	top: 78%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	z-index: 1;
+}
+
+.tm_line2 {
+	position: absolute;
+	top:81%;
+	left: 29%;
+	background-color: #e8e8e8;
+	height: 2px;
+	width: 410px;
+	z-index: 1;
+}
+
+.tm_name3 {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: left;
+	top: 83%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	z-index: 1;
+
+}
+
+.tm_subheading3 {
+	left: 390px;
+	letter-spacing: 0;
+	color: #797878;
+	position: absolute;
+	text-align: left;
+	top: 86%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	z-index: 1;
+}
+
+.tm_line3 {
+	position: absolute;
+	top:89%;
+	left: 29%;
+	background-color: #e8e8e8;
+	height: 2px;
+	width: 410px;
+	z-index: 1;
+}
+
+.tm_name4 {
+	left: 390px;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: left;
+	top: 91%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	z-index: 1;
+
+}
+
+.tm_subheading4 {
+	left: 390px;
+	letter-spacing: 0;
+	color: #797878;
+	position: absolute;
+	text-align: left;
+	top: 94%;
+	left: 29%;
+	width: 195px;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	z-index: 1;
+}
+
+.tm_line4 {
+	position: absolute;
+	top:97%;
+	left: 29%;
+	background-color: #e8e8e8;
+	height: 2px;
+	width: 410px;
+	z-index: 1;
+}
+
+.profile_icon1 {
+	position: absolute;
+	width: 2.5rem;
+	height: 2.5rem;
+	top:67.5%;
+	left: 25%;
+	z-index: 1;
+}
+
+.project_icon {
+	position: absolute;
+	width: 5.5rem;
+	height: 5.5rem;
+	top:18%;
+	left:28.75%;
+	z-index: 1;
+}
+
+.project_icon2 {
+	position: absolute;
+	width: 5.5rem;
+	height: 5.5rem;
+	top:18%;
+	left:47.75%;
+	z-index: 1;
+}
+.project_types{
+	display:grid;
+}
+.projects_section{
+	display:flex;
+	margin-left:4%
+}
+
+.react-calendar {
+	border-radius: 6px;
+	background: white;
+	font-family: "Lato";
+    font-style: normal;
+	line-height: 1.125em;
+  }
+  .react-calendar--doubleView {
+	width: 700px;
+  }
+  .react-calendar--doubleView .react-calendar__viewContainer {
+	display: flex;
+	margin: -0.5em;
+  }
+  .react-calendar--doubleView .react-calendar__viewContainer > * {
+	width: 50%;
+	margin: 0.5em;
+  }
+  .react-calendar,
+  .react-calendar *,
+  .react-calendar *:before,
+  .react-calendar *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  .react-calendar button {
+	margin: 0;
+	border: 0;
+	outline: none;
+  }
+  .react-calendar button:enabled:hover {
+	cursor: pointer;
+  }
+  .react-calendar__navigation {
+	display: flex;
+	height: 44px;
+	margin-bottom: 1em;
+  }
+  .react-calendar__navigation button {
+	min-width: 44px;
+	background: none;
+  }
+  .react-calendar__navigation button:disabled {
+	background-color: #f0f0f0;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+	background-color: #e6e6e6;
+  }
+  .react-calendar__month-view__weekdays {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.75em;
+  }
+  .react-calendar__month-view__weekdays__weekday {
+	padding: 0.5em;
+  }
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75em;
+	font-weight: bold;
+  }
+  .react-calendar__month-view__days__day--weekend {
+	color: black;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+	color: #757575;
+  }
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__century-view .react-calendar__tile {
+	padding: 2em 0.5em;
+  }
+  .react-calendar__tile {
+	max-width: 100%;
+	padding: 10px 3px;
+	background: none;
+	text-align: center;
+	line-height: 16px;
+	border-radius: 6px;
+  }
+  .react-calendar__tile:disabled {
+	background-color: #f0f0f0;
+  }
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+	background-color: #e6e6e6;
+  }
+  .react-calendar__tile--now {
+	background: grey;
+  }
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+	background: #812130;
+  }
+  .react-calendar__tile--hasActive {
+	background: #812130;
+  }
+  .react-calendar__tile--hasActive:enabled:hover,
+  .react-calendar__tile--hasActive:enabled:focus {
+	background: #812130;
+  }
+  .react-calendar__tile--active {
+	background: #812130;
+	color: white;
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+	background: #812130;
+  }
+  .react-calendar--selectRange .react-calendar__tile--hover {
+	background-color: #e6e6e6;
+  }
+

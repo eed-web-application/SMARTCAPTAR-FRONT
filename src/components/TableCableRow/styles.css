@@ -1,0 +1,14 @@
+.statusNEW {
+    font-weight:900;
+    color: rgb(134, 134, 134);
+}
+
+.statusPENDING{
+    font-weight:900;
+    color: rgb(217, 189, 9);
+}
+
+.statusREJECTED {
+    font-weight:900;
+    color: rgb(186, 1, 1);
+}  

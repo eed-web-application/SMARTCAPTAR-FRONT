@@ -1,0 +1,30 @@
+.searchWrapper{
+    margin-left: 20px;
+    display:flex;
+    background-color: #F5F5F5;
+    height: 50px;
+    border-radius: 8px;
+    outline: none;
+    color: #9DBFAF;
+  
+    text-align: left;
+    
+}
+.searchTermCableInv {
+    
+   background-color: #F5F5F5;
+    padding: 25px;
+    height: 30px;
+    border-radius: 8px;
+    outline: none;
+    color: #9DBFAF;
+    width:30vh;
+  }
+  
+  .searchTermCableInv:focus{
+    color: black;
+  }
+  .searchSubmit{
+    display:none;
+  }
+  

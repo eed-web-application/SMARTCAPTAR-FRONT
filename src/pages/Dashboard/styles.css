@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.dashboard {
+  background-color: #efefef;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 14vw auto;
+  grid-template-rows: 10vh auto;
+  grid-template-areas:
+    "sidebar navbar"
+    "sidebar main";
+}
+
+.dashboard_sidebar {
+  grid-area: sidebar;
+}
+
+.dashboard_navbar {
+  grid-area: navbar;
+}
+
+.dashboard_container {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 10fr 8fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "activity cables"
+    "action upload";
+  align-items: center;
+}
+
+.action_section {
+  grid-area: action;
+  width: 95%;
+}
+
+.cable_section {
+  grid-area: cables;
+  width: 90%;
+}
+
+.activity_section {
+  grid-area: activity;
+  width: 95%;
+}
+
+.upload_section {
+  grid-area: upload;
+  width: 90%;
+  min-height: fit-content;
+}
+
+.request_access_btn {
+  min-width:120px;
+  min-height: 50px;
+  max-width: 120px;
+  max-height: 50px;
+  background-color: #812130;
+  border-radius: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  
+}
+
+.approvalqueue_flowchart{
+  width: 85%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
+  position: relative; /* Declared position allows for location changes */
+  top: -40px;
+
+
+}
+
+.download_template_btn {
+  width: 14vw;
+  height: 9vh;
+  background-color: #812130;
+  border-radius: 15px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.dashboard_container_section {
+  background-color: white;
+  height: 40vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+
+.dashboard_container_section_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.dashboard_container_section_title_text {
+  display: flex;
+  color: #131313;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.dashboard_container_section_title_sub {
+  color: #9a9a9a;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.action_items {
+  display: flex;
+  flex-direction: column;
+}
+
+.action_items_item {
+  display: grid;
+  grid-template-columns: 1fr 10fr 3fr;
+  grid-template-areas: "profile content approver";
+  align-items: center;
+}
+
+.action_items_item_profile {
+  grid-area: profile;
+  margin-left: 15px;
+}
+
+.action_items_item_content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.action_items_item_content_description {
+  font-size: 15px;
+  color: #4277ff;
+}
+
+.action_items_item_content_sub-description {
+  font-size: 14px;
+  color: #9a9a9a;
+}
+
+.action_items_item_approver {
+  grid-area: approver;
+  justify-self: center;
+}
+
+.action_items_item_profile,
+.action_items_item_approver {
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.cable-listing {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.cable-listing_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.cable-listing_item_title {
+  font-size: 15px;
+  color: #4277ff;
+}
+
+.cable-listing_item_date {
+  color: #9a9a9a;
+}
+
+.chart_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart {
+  width: 65% !important;
+  max-width: 400px;
+  height: auto !important;
+  margin-top: -9vh;
+}
+
+
+@media screen and (min-width: 1600px) {
+  .dashboard {
+    grid-template-columns: 14vw auto;
+  }
+
+  .dashboard_container_left,
+  .dashboard_container_right {
+    margin: 2% 2%;
+  }
+}
+
+.statusDashboard{
+  display: block;
+  min-height: fit-content;
+}
