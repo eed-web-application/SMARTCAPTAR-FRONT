@@ -3,8 +3,8 @@
   border-radius: 10px;
   overflow: scroll;
   min-width: 1000px;
-  min-height: 735px;
-  max-width:1200px;
+  max-width: 1200px;
+  margin-bottom: 200;
 }
 .tableDivCables::-webkit-scrollbar {
   height: 10px;
@@ -15,7 +15,7 @@
 .tableDivCables::-webkit-scrollbar-track,
 .tableDivCables::-webkit-scrollbar-thumb {
   background-color: grey;
-  
+
   border-radius: 10px;
 }
 
@@ -63,16 +63,15 @@
   /* Demonstrate that this works for input with custom styles */
 }
 .input {
-  
-        box-sizing: border-box;
-        height: 39px;
-        width:200px;
-        border: 2px solid #C4C4C4;
-        border-radius: 6px;
-        margin-left: 10px;
-        padding:2px;
+  box-sizing: border-box;
+  height: 39px;
+  width: 200px;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+  margin-left: 10px;
+  padding: 2px;
 }
-.openModal{
+.openModal {
   background-color: #812130; /* Green */
   border: none;
   color: white;
@@ -84,53 +83,49 @@
   font-size: 16px;
 }
 
-.red_text{
-  color:#ba0e0e;
+.red_text {
+  color: #ba0e0e;
 }
 
-.modal-text{
+.modal-text {
   font-size: 20px;
   font-weight: 500;
   margin-top: 8%;
-
 }
-.buttonModalCables{
+.buttonModalCables {
   background-color: #812130; /* Green */
   border: none;
   color: white;
-  margin:5px;
+  margin: 5px;
   padding: 5px 5px;
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  
 }
-.approveCablesButton{
+.approveCablesButton {
   background-color: #812130; /* Green */
   border: none;
   color: white;
   padding: 5px 5px;
   border-radius: 5px;
-  margin:2px;
+  margin: 2px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  
 }
 
-.approveCablesButton2{
+.approveCablesButton2 {
   background-color: #95061c; /* Green */
   border: none;
   color: white;
   padding: 5px 5px;
   border-radius: 5px;
-  margin:2px;
+  margin: 2px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  
 }
 
 .cablelisting {
@@ -147,9 +142,6 @@
     "sidebar navbar"
     "sidebar main";
 }
-
-
-
 
 .cablelisting_container_feedback {
   display: grid;
@@ -198,7 +190,7 @@
   color: #797878;
 }
 
-.cablelisting_container_feedback_box{
+.cablelisting_container_feedback_box {
   display: flex;
   flex-direction: row;
 }
@@ -213,62 +205,63 @@
   padding-bottom: 20px;
 }
 
-
 /* Clear floats after the columns */
 
-.tableSeperator{
-  
-border-top: 10px solid #812130 !important;
-} 
-  .noCables{
-    text-align: center;
-    vertical-align: middle; 
-    color: #812130;
-  }
+.tableSeperator {
+  border-top: 10px solid #812130 !important;
+}
+.noCables {
+  text-align: center;
+  vertical-align: middle;
+  color: #812130;
+}
 
-  
+.rowItem2 {
+  margin-left: 5%;
+  margin-right: 2%;
+}
+.createCable {
+  background-color: #812130; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  float: right;
+}
+.cancelButton {
+  background-color: #812130;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
 
-  .rowItem2{
-    margin-left: 5%;
-    margin-right: 2%;
-  }
-  .createCable{
-    background-color: #812130; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 5px;
-    margin:2px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;  
-    float: right;
-  }
-  .cancelButton{
-    background-color: #812130;
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 5px;
-    margin: 2px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-  }
+.deleteButton {
+  background-color: #00a503;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
 
-  .deleteButton{
-    background-color: #00a503;
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 5px;
-    margin: 2px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-  }
-
-  .giphy-embed{
-      margin-top: 4%;
-      margin-left: 37.5%;
-  }
+.giphy-embed {
+  margin-top: 4%;
+  margin-left: 37.5%;
+}
+.managerTableDiv {
+  height: 32vh;
+  overflow: auto;
+  scrollbar-color: green;
+}

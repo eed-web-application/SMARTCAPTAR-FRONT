@@ -8,7 +8,7 @@
   min-height: 100vh;
   overflow: hidden;
   display: grid;
-	grid-template-columns: 14vw auto;
+  grid-template-columns: 14vw auto;
   grid-template-rows: 10vh auto;
   grid-template-areas:
     "sidebar navbar"
@@ -42,7 +42,7 @@
   margin: 30px;
 }
 
-.sectionupload{
+.sectionupload {
   display: inline-block;
   margin-top: 10%;
   flex-direction: column;
@@ -155,7 +155,7 @@
   padding-top: 5px;
 }
 
-button{
+button {
   cursor: pointer;
 }
 input[type="file"] {
@@ -167,7 +167,7 @@ input[type="file"] {
   flex-wrap: wrap;
   /* margin-left: auto; */
   padding-top: 50px;
-  
+
   justify-content: center;
 }
 
@@ -178,12 +178,12 @@ input[type="file"] {
   border-radius: 5px;
   padding: 15px 50px 15px 50px;
 }
-.CreateCableButton{
+.CreateCableButton {
   background-color: #871628;
   color: white;
   padding: 5px 20px 5px 20px;
   border-radius: 5px;
- margin-left: 20px;
+  margin-left: 20px;
 }
 .createnew_container_section_submit_button {
   background-color: #871628;

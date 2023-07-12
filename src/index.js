@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import TimeAgo from 'javascript-time-ago'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import TimeAgo from "javascript-time-ago";
 
-import en from 'javascript-time-ago/locale/en.json'
-import ru from 'javascript-time-ago/locale/ru.json'
+import en from "javascript-time-ago/locale/en.json";
+import ru from "javascript-time-ago/locale/ru.json";
 
-TimeAgo.addDefaultLocale(en)
-TimeAgo.addLocale(ru)
+TimeAgo.addDefaultLocale(en);
+TimeAgo.addLocale(ru);
 ReactDOM.render(
   <React.StrictMode>
-    <base href='/path/to/my/app'/>
+    <base href="/path/to/my/app" />
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

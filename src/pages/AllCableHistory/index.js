@@ -11,14 +11,19 @@ const SentItems = (props) => {
   const [pending, setPending] = useState(1);
   const [returned, setReturned] = useState(1);
 
-  
-  
   return (
-    
     <main className="cablelisting">
-      
-      <Navigation  user = {props.user.USERNAME} setUser={props.setUser} admin={props.user.ADMIN} className="dashboard_sidebar" />
-      <Profile user={props.user.USERNAME} className="dashboard_navbar" page={"Cable History"}/>
+      <Navigation
+        user={props.user.USERNAME}
+        setUser={props.setUser}
+        admin={props.user.ADMIN}
+        className="dashboard_sidebar"
+      />
+      <Profile
+        user={props.user.USERNAME}
+        className="dashboard_navbar"
+        page={"Cable History"}
+      />
       <section className="cablelisting_container">
         <CableInventoryView table={"SMARTCAPTAR_HISTORY"} />
       </section>
