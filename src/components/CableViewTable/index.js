@@ -24,6 +24,7 @@ import { StrikethroughSTwoTone } from "@mui/icons-material";
 import SearchModalView from "../Modals/CableInventoryModal";
 import CableHistoryModal from "../Modals/CableHistoryModal";
 import { JSON2CSV } from "./JSON2CSV";
+import Loading from "../Animations/Loading";
 const customStyles = {
   overlay: {
     zIndex: "4",
@@ -653,7 +654,7 @@ function CableInventoryView(props) {
                         let value = e.target.checked;
                         setCables(
                           cables
-                            .slice((page - 1) * rows, (page - 1) * rows + rows)
+                            // .slice((page - 1) * rows, (page - 1) * rows + rows)
                             .map((d) => {
                               d.select = value;
                               return d;
@@ -673,33 +674,38 @@ function CableInventoryView(props) {
                 {props.table == "SMARTCAPTAR_UPLOAD" ||
                 props.table == "SMARTCAPTAR_QUEUE" ? (
                   <CablesRow
-                    cables={cables
-                      .sort((a, b) => {
-                        if (a.STATUS == "REJECTED" && b.STATUS == "NEW") {
-                          return -1;
-                        } else if (
-                          a.STATUS == "REJECTED" &&
-                          b.STATUS == "PENDING"
-                        ) {
-                          return -1;
-                        } else if (a.STATUS == "NEW" && b.STATUS == "PENDING") {
-                          return -1;
-                        } else {
-                          return 1;
-                        }
-                      })
-                      .filter((item) => {
-                        if (searchTxt == "") {
-                          return item;
-                        } else if (
-                          item[filterTerm]
-                            .toLowerCase()
-                            .includes(searchTxt.toLowerCase())
-                        ) {
-                          return item;
-                        }
-                      })
-                      .slice((page - 1) * rows, (page - 1) * rows + rows)}
+                    cables={
+                      cables
+                        .sort((a, b) => {
+                          if (a.STATUS == "REJECTED" && b.STATUS == "NEW") {
+                            return -1;
+                          } else if (
+                            a.STATUS == "REJECTED" &&
+                            b.STATUS == "PENDING"
+                          ) {
+                            return -1;
+                          } else if (
+                            a.STATUS == "NEW" &&
+                            b.STATUS == "PENDING"
+                          ) {
+                            return -1;
+                          } else {
+                            return 1;
+                          }
+                        })
+                        .filter((item) => {
+                          if (searchTxt == "") {
+                            return item;
+                          } else if (
+                            item[filterTerm]
+                              .toLowerCase()
+                              .includes(searchTxt.toLowerCase())
+                          ) {
+                            return item;
+                          }
+                        })
+                      //.slice((page - 1) * rows, (page - 1) * rows + rows)
+                    }
                     headers={headers}
                     setCables={setCables}
                     openModalView={openModalView}
@@ -724,7 +730,9 @@ function CableInventoryView(props) {
             )}
           </table>
           {loading ? (
-            <BeatLoader className="noCables" />
+            <div style={{ margin: 20 }}>
+              <BeatLoader className="noCables" />
+            </div>
           ) : cables.length == 0 ? (
             <div class="noCables">
               <h1>NO CABLES AVAILABLE</h1>

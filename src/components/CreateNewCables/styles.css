@@ -2,11 +2,11 @@
   background-color: white;
   border-radius: 10px;
   overflow: scroll;
-  max-width: 1000px;
+  max-width: 1500px;
   max-height: 735px;
-  max-width: 1200px;
+
   overflow: scroll;
-  border: solid 3px #808080;
+  border: solid 2px #808080;
 }
 .TableTitle {
   padding: 20px;
@@ -120,7 +120,31 @@
 }
 
 .deletebtn {
-  background-color: #812130; /* Green */
+  background-color: green; /* Green */
+  border: none;
+  color: white;
+  margin: 5px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.warning {
+  background-color: rgb(206, 206, 21); /* Green */
+  border: none;
+  color: white;
+  margin: 5px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.reconWarning {
+  background-color: orange; /* Green */
   border: none;
   color: white;
   margin: 5px;

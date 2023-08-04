@@ -44,7 +44,7 @@ function ProjectsTableView(props) {
   };
   const closeModal = () => {
     setModalIsOpen(false);
-    setProject("");
+    setProjectName("");
     setPrefix("");
   };
   const closeModalModify = () => {
@@ -70,6 +70,8 @@ function ProjectsTableView(props) {
   const submitProject = async () => {
     await axios.post(`/addProject`, { project: project, prefix: prefix });
     getProjectsAPI(page);
+    setProjectName("");
+    setPrefix("");
     closeModal();
   };
 
@@ -119,7 +121,7 @@ function ProjectsTableView(props) {
           />
         </div>
       </Modal>
-      <FileUploadView closeModal={closeModal} modalIsOpen={modalFileIsOpen} />
+
       <div style={{ display: "flex", margin: 20 }}>
         <div style={{ marginRight: "40%" }}>
           <p className="dashboard_container_section_title_text">Projects</p>

@@ -96,7 +96,6 @@ function SettingsTableView(props) {
       admin: false,
       projects: tempUserProjects.toString(),
       oldProjects: tempUser.PROJECTS,
-      newProjects,
     });
     closeModifyModal();
     getUsersAPI(page);

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
 import axios from "axios";
-import { BiErrorCircle } from "react-icons/bi";
 import CableQAModal from "../Modals/CableWorkspaceModal";
 axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
 
@@ -74,7 +73,7 @@ function CablesRow(props) {
                 class={
                   d[key] == "NEW"
                     ? "statusNEW"
-                    : d[key] == "PENDING"
+                    : d[key] == "PENDING" || d[key] == "MODIFY"
                     ? "statusPENDING"
                     : d[key] == "REJECTED"
                     ? "statusREJECTED"

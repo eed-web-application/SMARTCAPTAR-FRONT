@@ -1,45 +1,42 @@
 import React from "react";
 import { CreateNewOrder, order } from "../../Headers/order";
+import { IoMdCheckmark, IoMdWarning } from "react-icons/io";
 
 function CablesRow(props) {
   console.log(props.cables);
   return props.cables.map((d, index) => (
     <tr key={d.CABLENUM}>
       <td>
-        <button
-          className="deletebtn"
-          type="button"
-          onClick={(e) => {
-            let value = e.target.checked;
-            console.log(index);
-            props.setCables(props.cables.splice(index, 1));
-          }}
-        >
-          Delete
-        </button>
+        {props.dupes.includes(d["CABLENUM"]) ? (
+          <div className="warning">
+            <IoMdWarning color={"white"} />
+          </div>
+        ) : null}
+        {props.recon.includes(d["CABLENUM"]) ? (
+          <div className="reconWarning">
+            <IoMdWarning color={"white"} />
+          </div>
+        ) : null}
+        {!props.dupes.includes(d["CABLENUM"]) &&
+        !props.recon.includes(d["CABLENUM"]) ? (
+          <div className="deletebtn">
+            <IoMdCheckmark color={"white"} />
+          </div>
+        ) : null}
       </td>
       {CreateNewOrder.map((key, index) => {
         if (key == "CABLENUM") {
           return (
             <td className="relative-parent">
               <span className="size-calibration"></span>
-              {props.dupes.includes(d[key]) ? (
-                <button
-                  className="openModal"
-                  type="button"
-                  onClick={(e) => props.openModalView(d)}
-                >
-                  ALREADY EXISTS
-                </button>
-              ) : (
-                <button
-                  className="openModal"
-                  type="button"
-                  onClick={(e) => props.openModalView(d)}
-                >
-                  {d[key]}
-                </button>
-              )}
+
+              <button
+                className="openModal"
+                type="button"
+                onClick={(e) => props.openModalView(d)}
+              >
+                {d[key]}
+              </button>
             </td>
           );
         }
