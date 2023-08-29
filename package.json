@@ -1,8 +1,7 @@
 {
-  "name": "Smart CAPTAR",
-  "homepage": ".",
+  "name": "SmartCAPTAR",
+  "homepage": "https://accel-webapp-dev.slac.stanford.edu",
   "version": "0.1.0",
-  "proxy": "https://accel-webapp-dev.slac.stanford.edu",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
