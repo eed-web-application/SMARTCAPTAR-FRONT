@@ -1,6 +1,6 @@
 {
   "name": "SmartCAPTAR",
-  "homepage": "https://accel-webapp-dev.slac.stanford.edu/smcaptar",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
