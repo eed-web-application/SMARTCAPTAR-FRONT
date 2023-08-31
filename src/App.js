@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={'/smartcaptar'}>
       <Routes>
         <Route
           path="/"
