@@ -4,7 +4,6 @@ import "./styles.css";
 import axios from "axios";
 import CableQAModal from "../Modals/CableWorkspaceModal";
 axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
-
 function CablesRow(props) {
   const [error, setError] = useState(true);
 

@@ -5,12 +5,7 @@ import {
   inventoryOrder,
 } from "../../Headers/order";
 import CablesRow from "../TableCableRow/CablesRow";
-import {
-  getStepButtonUtilityClass,
-  Pagination,
-  TablePagination,
-} from "@mui/material";
-import { useTable } from "react-table";
+import { TablePagination } from "@mui/material";
 import FilterBar from "../FilterBar/index";
 import axios from "axios";
 axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
@@ -20,11 +15,13 @@ import Modal from "react-modal";
 import CreateCableModal from "../Modals/CreateCableModal/index";
 import CableQAModal from "../Modals/CableWorkspaceModal";
 import { usePapaParse } from "react-papaparse";
-import { StrikethroughSTwoTone } from "@mui/icons-material";
 import SearchModalView from "../Modals/CableInventoryModal";
 import CableHistoryModal from "../Modals/CableHistoryModal";
 import { JSON2CSV } from "./JSON2CSV";
-import Loading from "../Animations/Loading";
+import Lottie from "lottie-react";
+import Success from "../../assets/success.json";
+
+//Custom styles for the modal that is used to display the Request Approvals, Delete Cables modals
 const customStyles = {
   overlay: {
     zIndex: "4",
@@ -41,32 +38,49 @@ const customStyles = {
     backgroundColor: "#FFFFFF",
   },
 };
-import { TextField } from "@mui/material";
 function CableInventoryView(props) {
+  //State to hold Cables from get request
   const [cables, setCables] = useState([]);
+  //State to hold if modal is open or not
   const [modalIsOpen, setIsOpen] = useState(false);
+  // state to hold the cable information for a cable that is clicked on
   const [modalCable, setModalCable] = useState({});
   const [page, setPage] = useState(1);
+  //Setting the headers used for the table
   const [headers, setHeaders] = useState(uploadedOrder);
+  //State to hold the text that is typed in the search box
   const [searchTxt, setSearch] = useState("");
+  //State to hold which text is selected from the dropdown
   const [filterTerm, setFilter] = useState("CABLENUM");
+  //State that sets if table is loading or not
   const [loading, setLoading] = useState(true);
+  //Total amount of cables loaded
   const [total, setTotal] = useState(0);
+  //State if modal for delete is open or not
   const [modalDeleteIsOpen, setDeleteIsOpen] = React.useState(false);
+  //State if modal for Creating a new cable is open or not
   const [modalCreateIsOpen, setCreateIsOpen] = React.useState(false);
+  //State if modal for Queing cables is open or not
   const [modalReqApproveIsOpen, setReqApproveIsOpen] = React.useState(false);
+  //State if modal for Approving Cables is open or not
   const [modalApproveIsOpen, setApproveIsOpen] = React.useState(false);
+  //State if modal for Rejecting cables is open or not
   const [modalRejectIsOpen, setRejectIsOpen] = React.useState(false);
+  //State to check if a user selects to queue cables
   const [check, setCheck] = React.useState(false);
+  //State that holds all cable types associated with a cable
   const [types, setTypes] = useState([]);
   const [rows, setRows] = useState(10);
   const [columnInfo, setColumnInfo] = useState({});
+  //State that holds the text for rejection comments
   const [comments, setComments] = useState("");
-
   const [projects, setProjects] = useState([]);
+  //State that holds user information
   const [user, setUser] = useState({});
+  //State that holds all connector types that match the cable type selected in the modify cable menu
   const [conn, setConnTypes] = useState([]);
   const [admins, setAdmins] = useState([]);
+  //Functions to change the text value of each header in the modify cable modal
   const handleSubmitUpdate = (event, cable, key) => {
     event.preventDefault();
     var text = event.target.value;
@@ -75,17 +89,17 @@ function CableInventoryView(props) {
     setModalCable(temp);
   };
 
-  const { jsonToCSV } = usePapaParse();
-
+  //Utillity function for closing the modal and resetting the state
   function closeModal() {
     setIsOpen(false);
     setModalCable({});
   }
+  //Utility function for closing the create modal and fetching the cables again
   function closeCreateModal() {
     setCreateIsOpen(false);
     getCablesAPI(page);
   }
-
+  //Function for getting all cable types and setting the values to the state
   const getTypes = async () => {
     const response = await fetch(
       `http://134.79.206.193/smcaptar/getCableTypes`
@@ -93,11 +107,13 @@ function CableInventoryView(props) {
     const data = await response.json();
     setTypes(data.types);
   };
+  //Get all project names and setting it to the state
   const getProjects = async () => {
     const response = await fetch(`http://134.79.206.193/smcaptar/getProjects`);
     const data = await response.json();
     setProjects(data.projects);
   };
+  //Get all connector types associated with a cable type
   const getConnTypes = async (CT) => {
     const response = await fetch(
       `http://134.79.206.193/smcaptar/getConnTypes?cableType=${CT}`
@@ -105,7 +121,7 @@ function CableInventoryView(props) {
     const data = await response.json();
     setConnTypes(data.types);
   };
-
+  //Opens modal and sets the correct data to be shown
   const openModalView = (cable) => {
     if (props.table != "SMARTCAPTAR_HISTORY") {
       getProjects();
@@ -115,6 +131,7 @@ function CableInventoryView(props) {
     setModalCable(cable);
     setIsOpen(true);
   };
+  //Function used to search CABLEINV once the user clicks submit
   const searchInventory = async () => {
     const response = await fetch(
       `http://134.79.206.193/smcaptar/getCablesInventory?offset=${
@@ -132,7 +149,7 @@ function CableInventoryView(props) {
     }
     setLoading(false);
   };
-
+  //Function for getting the correct cables based on table being passed to this component
   const getCablesAPI = async (p, row) => {
     console.log(row);
     if (searchTxt != "" && props.table == "CABLEINV") {
@@ -181,7 +198,7 @@ function CableInventoryView(props) {
       setLoading(false);
     }
   };
-
+  //The use effect gets the user, then fetches cables
   useEffect(() => {
     console.log(columnInfo);
     var loggedInUser = localStorage.getItem("user");
@@ -194,7 +211,7 @@ function CableInventoryView(props) {
     }
     getCablesAPI(page, rows);
   }, []);
-
+  //Selected each cable with a checkmark and approves them
   async function ApproveCables() {
     let tempCables = [];
     cables.forEach((d) => {
@@ -209,7 +226,7 @@ function CableInventoryView(props) {
     setApproveIsOpen(false);
     getCablesAPI(page);
   }
-
+  //Selects each cable marked with a check and queues the cables
   async function QueueCables() {
     let tempCables = [];
     cables.forEach((d) => {
@@ -217,20 +234,19 @@ function CableInventoryView(props) {
         tempCables.push(d);
       }
     });
-    console.log(tempCables);
-
     await axios
       .post(`/queueCables?table=${"SMARTCAPTAR_QUEUE"}`, { cables: tempCables })
       .then(() => console.log("FINSIHED"));
     setCables([]);
     await getCablesAPI(page, user);
   }
-
+  //Close the approval Modal and resets the state
   async function close() {
     setReqApproveIsOpen(false);
     setCheck(false);
+    QueueCables();
   }
-
+  //Function to delete cables marked with a check
   async function DeleteCables() {
     let tempCables = [];
     cables.forEach((d) => {
@@ -243,7 +259,7 @@ function CableInventoryView(props) {
     setCables([]);
     await getCablesAPI(page, user);
   }
-
+  //Function to export the cables marked by a check to a CSV format
   async function ExportCSV() {
     // var csv = Papa.unparse(array0;
     let tempCables = [];
@@ -255,7 +271,7 @@ function CableInventoryView(props) {
 
     JSON2CSV(tempCables, "CAPTAR");
   }
-
+  //Updates a single cable
   async function updateCableDB(cable) {
     console.log(cable);
     await axios
@@ -275,7 +291,7 @@ function CableInventoryView(props) {
     await getCablesAPI(page);
     closeModal();
   }
-
+  //Rejects each cable marked with a check
   async function RejectCables() {
     let tempCables = [];
     cables.forEach((d) => {
@@ -301,7 +317,7 @@ function CableInventoryView(props) {
     await getCablesAPI(page, user);
     setRejectIsOpen(false);
   }
-
+  //Rejects cables marked with a check
   async function CancelQueue(num) {
     await axios
       .post(`/cancelQueue?table=${props.table}`, { cableNum: num })
@@ -342,8 +358,7 @@ function CableInventoryView(props) {
         {!check ? (
           <div>
             <p className="modal-text" style={{ textAlign: "center" }}>
-              Are you sure you want to{" "}
-              <span class="red_text">Request Approvals</span>?
+              Are you sure you want to <span class="red_text">Approve</span>?
             </p>
             <div style={{ textAlign: "center" }}>
               <button
@@ -357,7 +372,7 @@ function CableInventoryView(props) {
                 style={{ margin: 20 }}
                 className="deleteButton"
                 onClick={() => {
-                  QueueCables(), setCheck(true), setTimeout(close, 1000);
+                  setCheck(true);
                 }}
               >
                 Request Approvals
@@ -365,7 +380,13 @@ function CableInventoryView(props) {
             </div>
           </div>
         ) : (
-          <BeatLoader />
+          <Lottie
+            animationData={Success}
+            loop={true}
+            onLoopComplete={() => {
+              close();
+            }}
+          />
         )}
       </Modal>
 

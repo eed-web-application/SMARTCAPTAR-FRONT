@@ -1,5 +1,6 @@
 import { Parser } from "@json2csv/plainjs";
 import { keys, deleteKeys } from "../../Headers/order";
+import CSVTemp from "../../assets/captarin.csv";
 function ReformatJSON(json, type) {
   function renameKey(obj, oldKey, newKey) {
     obj[newKey] = obj[oldKey];
@@ -23,10 +24,14 @@ function ReformatJSON(json, type) {
 }
 export function JSON2CSV(data, type) {
   let json = ReformatJSON(data, type);
+  const opts = { header: true };
   try {
-    const parser = new Parser();
+    const parser = new Parser(opts);
     const csv = parser.parse(json);
     const blob = new Blob([csv], { type: "text/csv" });
+
+    console.log(csv.split("\n"));
+    console.log(CSVTemp.split("\n"));
     // Creating an object for downloading url
     const url = window.URL.createObjectURL(blob);
 

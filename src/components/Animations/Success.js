@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SuccessAnimation from "../../assets/success.json";
 import Lottie from "lottie-react";
-
+//Success Loading component that triggers a reroute when the animation is over
 function Success(props) {
   return (
     <div
@@ -15,7 +15,7 @@ function Success(props) {
         animationData={SuccessAnimation}
         loop={true}
         onLoopComplete={() => {
-          console.log("Yeet");
+          //Pass in which page to travel to once the success animation is done
           props.onComplete("/uploaded-cables");
         }}
       />

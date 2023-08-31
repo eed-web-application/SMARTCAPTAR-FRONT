@@ -52,3 +52,7 @@ body {
   border-radius: 10px;
   background: #812130;
 }
+input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #812130;
+}

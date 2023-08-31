@@ -24,50 +24,13 @@ const customStyles = {
     borderRadius: "20px",
   },
 };
-const defaultCable = {
-  Status: "New",
-  CableNumber: "",
-  "FormalDevice Name": "",
-  FormalDevice: "",
-  CableFunction: "",
-  CableType: "",
-  "Origin Loc": "",
-  "Origin  Rack": "",
-  "Origin  Side": "",
-  "Origin  Ele": "",
-  "Origin  Slot": "",
-  "Origin  Conn #": "",
-  "Origin  Pinlist": "",
-  "Origin  Conn Type": "",
-  "Origin  Station": "",
-  "Origin  Ins": "",
-  "Dest  Loc": "",
-  "Dest  Rack": "",
-  "Dest  Side": "",
-  "Dest  Ele": "",
-  "Dest  Slot": "",
-  "Dest Conn #": "",
-  "Dest  Pinlist": "",
-  "Dest  Conn Type": "",
-  "Dest  Station": "",
-  "Dest  Ins": "",
-  Length: "",
-  Routing: "",
-  Revision: "",
-  "Job #": "",
-  "Drawing #": "",
-  "Drawing  Title": "",
-  "User  Id": "",
-  "List Title": "",
-  "Area Code": "",
-};
+
 const CreateNew = (props) => {
   const [cables, setCables] = useState([]); //REPLACE CAPTAR TEST WITH THE CORRECT JSON
   const [fileName, setFileName] = useState("");
   const [errorMessage, setErrorMessage] = useState(["All Cables Valid"]);
   const navigate = useNavigate();
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [newCable, setNewCable] = useState(defaultCable);
   const [error, setError] = useState(false);
   const [dupes, setDupes] = useState([]);
   const [recon, setRecon] = useState([]);
@@ -102,54 +65,110 @@ const CreateNew = (props) => {
           complete: function (results) {
             console.log(results.data);
             let cableArr = [];
-            for (let i = 4; i < results.data.length; i++) {
-              if (results.data[i][1] != "") {
+            if (
+              results.data[0][1] != "" &&
+              results.data[1][1] != "" &&
+              results.data[2][1] != ""
+            ) {
+              for (let i = 1; i < results.data.length; i++) {
                 let temp = {
-                  CABLENUM: results.data[i][1],
-                  FORMDEV_NAME: results.data[i][2],
-                  FUNC: results.data[i][3],
-                  CABLETYPE: results.data[i][4],
-                  ORIGIN_LOC: results.data[i][5],
-                  ORIGIN_RACK: results.data[i][6],
-                  ORIGIN_SIDE: results.data[i][7],
-                  ORIGIN_ELE: results.data[i][8],
-                  ORIGIN_SLOT: results.data[i][9],
-                  ORIGIN_CONNUM: results.data[i][10],
-                  ORIGIN_PINLIST: results.data[i][11],
-                  ORIGIN_CONNTYPE: results.data[i][12],
-                  ORIGIN_STATION: results.data[i][13],
-                  ORIGIN_INSTR: results.data[i][14],
-                  DEST_LOC: results.data[i][15],
-                  DEST_RACK: results.data[i][16],
-                  DEST_SIDE: results.data[i][17],
-                  DEST_ELE: results.data[i][18],
-                  DEST_SLOT: results.data[i][19],
-                  DEST_CONNUM: results.data[i][20],
-                  DEST_PINLIST: results.data[i][21],
-                  DEST_CONNTYPE: results.data[i][22],
-                  DEST_STATION: results.data[i][23],
-                  DEST_INSTR: results.data[i][24],
-                  LENGTH: results.data[i][25],
-                  ROUTING: results.data[i][26],
-                  REVISION: results.data[i][27],
-                  JOBNUM: results.data[i][28],
-                  DWGNUM: results.data[i][29],
-                  DRAWING_TITLE: results.data[i][30],
-                  ENTEREDBY: results.data[i][31],
-                  USERID_LIST_TITLE: results.data[i][32],
-                  AREACODE: results.data[i][33],
-                  MIN_LENGTH: results.data[i][34],
-                  MAX_LENGTH: results.data[i][35],
-                  ADDNL_LENGTH: results.data[i][36],
-                  PHASE: results.data[i][37],
-                  BEAM_AREA: results.data[i][38],
-                  SECTOR_GROUP: results.data[i][39],
-                  SECTOR_AREA_SOURCE: results.data[i][40],
-                  SECTOR_AREA_DEST: results.data[i][41],
-                  PENETRATION: results.data[i][42],
-                  PENETRATION_2: results.data[i][43],
+                  CABLENUM: results.data[i][0],
+                  CABLETYPE: results.data[i][1],
+                  JOBNUM: results.data[i][2],
+                  ENTEREDBY: results.data[i][3],
+                  FUNC: results.data[i][5],
+                  LENGTH: results.data[i][8],
+                  ROUTING: results.data[i][9],
+                  FORMDEV_NAME: results.data[i][42],
+                  ORIGIN_LOC: results.data[i][20],
+                  ORIGIN_RACK: results.data[i][21],
+                  ORIGIN_SIDE: results.data[i][22],
+                  ORIGIN_ELE: results.data[i][23],
+                  ORIGIN_SLOT: results.data[i][24],
+                  ORIGIN_CONNUM: results.data[i][25],
+                  ORIGIN_PINLIST: results.data[i][26],
+                  ORIGIN_CONNTYPE: results.data[i][27],
+                  ORIGIN_STATION: results.data[i][28],
+                  ORIGIN_INSTR: results.data[i][29],
+                  DEST_LOC: results.data[i][32],
+                  DEST_RACK: results.data[i][33],
+                  DEST_SIDE: results.data[i][34],
+                  DEST_ELE: results.data[i][35],
+                  DEST_SLOT: results.data[i][36],
+                  DEST_CONNUM: results.data[i][37],
+                  DEST_PINLIST: results.data[i][38],
+                  DEST_CONNTYPE: results.data[i][39],
+                  DEST_STATION: results.data[i][40],
+                  DEST_INSTR: results.data[i][41],
+                  REVISION: results.data[i][54],
+                  DWGNUM: results.data[i][11],
+                  DRAWING_TITLE: results.data[i][17],
+                  USERID_LIST_TITLE: results.data[i][43],
+
+                  AREACODE: results.data[i][19],
+                  MIN_LENGTH: results.data[i][51],
+                  MAX_LENGTH: results.data[i][52],
+                  ADDNL_LENGTH: results.data[i][53],
+                  PHASE: results.data[i][44],
+                  BEAM_AREA: results.data[i][45],
+                  SECTOR_GROUP: results.data[i][46],
+                  SECTOR_AREA_SOURCE: results.data[i][47],
+                  SECTOR_AREA_DEST: results.data[i][48],
+                  PENETRATION: results.data[i][49],
+                  PENETRATION_2: results.data[i][50],
                 };
                 cableArr.push(temp);
+              }
+            } else {
+              for (let i = 4; i < results.data.length; i++) {
+                if (results.data[i][1] != "") {
+                  let temp = {
+                    CABLENUM: results.data[i][1],
+                    FORMDEV_NAME: results.data[i][2],
+                    FUNC: results.data[i][3],
+                    CABLETYPE: results.data[i][4],
+                    ORIGIN_LOC: results.data[i][5],
+                    ORIGIN_RACK: results.data[i][6],
+                    ORIGIN_SIDE: results.data[i][7],
+                    ORIGIN_ELE: results.data[i][8],
+                    ORIGIN_SLOT: results.data[i][9],
+                    ORIGIN_CONNUM: results.data[i][10],
+                    ORIGIN_PINLIST: results.data[i][11],
+                    ORIGIN_CONNTYPE: results.data[i][12],
+                    ORIGIN_STATION: results.data[i][13],
+                    ORIGIN_INSTR: results.data[i][14],
+                    DEST_LOC: results.data[i][15],
+                    DEST_RACK: results.data[i][16],
+                    DEST_SIDE: results.data[i][17],
+                    DEST_ELE: results.data[i][18],
+                    DEST_SLOT: results.data[i][19],
+                    DEST_CONNUM: results.data[i][20],
+                    DEST_PINLIST: results.data[i][21],
+                    DEST_CONNTYPE: results.data[i][22],
+                    DEST_STATION: results.data[i][23],
+                    DEST_INSTR: results.data[i][24],
+                    LENGTH: results.data[i][25],
+                    ROUTING: results.data[i][26],
+                    REVISION: results.data[i][27],
+                    JOBNUM: results.data[i][28],
+                    DWGNUM: results.data[i][29],
+                    DRAWING_TITLE: results.data[i][30],
+                    ENTEREDBY: results.data[i][31],
+                    USERID_LIST_TITLE: results.data[i][32],
+                    AREACODE: results.data[i][33],
+                    MIN_LENGTH: results.data[i][34],
+                    MAX_LENGTH: results.data[i][35],
+                    ADDNL_LENGTH: results.data[i][36],
+                    PHASE: results.data[i][37],
+                    BEAM_AREA: results.data[i][38],
+                    SECTOR_GROUP: results.data[i][39],
+                    SECTOR_AREA_SOURCE: results.data[i][40],
+                    SECTOR_AREA_DEST: results.data[i][41],
+                    PENETRATION: results.data[i][42],
+                    PENETRATION_2: results.data[i][43],
+                  };
+                  cableArr.push(temp);
+                }
               }
             }
             console.log(cableArr);
