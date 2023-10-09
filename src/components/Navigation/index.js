@@ -11,8 +11,8 @@ import MailIcon from "../../assets/mail.png";
 import Modal from "react-modal";
 import "./styles.css";
 import axios from "axios";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
-
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
 const customStyles = {
   overlay: {
     zIndex: "4",

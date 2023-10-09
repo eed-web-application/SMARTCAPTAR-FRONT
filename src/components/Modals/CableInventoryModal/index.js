@@ -4,7 +4,8 @@ import Modal from "react-modal";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AiFillCloseCircle } from "react-icons/ai";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
 const customStyles = {
   content: {
     height: 700,

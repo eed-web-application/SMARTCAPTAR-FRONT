@@ -7,7 +7,8 @@ import "./styles.css";
 import { FiUpload } from "react-icons/fi";
 import { ElevatorSharp, RepeatOneSharp } from "@mui/icons-material";
 import Papa from "papaparse";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
 const customStyles = {
   content: {
     height: 240,
@@ -58,7 +59,7 @@ function FileUploadView(props) {
             api = "csvUploadUsers";
           }
           axios
-            .post(`http://134.79.206.193/smcaptar/${api}`, { arr: arr })
+            .post(`${baseUrl}/${api}`, { arr: arr })
             .then(
               (response) => {},
               (error) => {

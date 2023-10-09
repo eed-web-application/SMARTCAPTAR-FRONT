@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 // import "../Cables/styles.css";
 
 import axios from "axios";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
+
 // import {socket} from '../socket'
 
 function CableViewTableTest(props) {
@@ -18,9 +20,7 @@ function CableViewTableTest(props) {
     console.log("GETTING CABLES");
 
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getCables?offset=${(p - 1) * 10}&table=${
-        props.table
-      }`
+      `${baseUrl}/getCables?offset=${(p - 1) * 10}&table=${props.table}`
     );
     const data = await response.json();
     console.log(data.cables);

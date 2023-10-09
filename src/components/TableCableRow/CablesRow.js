@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
 import axios from "axios";
 import CableQAModal from "../Modals/CableWorkspaceModal";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
 function CablesRow(props) {
   const [error, setError] = useState(true);
 

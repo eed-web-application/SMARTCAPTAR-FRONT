@@ -8,6 +8,7 @@ import { CreateCableOrder } from "../../../Headers/order";
 import axios from "axios";
 import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import { newCableTemp } from "./cableTemp";
+import baseUrl from "../../config";
 const customStyles = {
   content: {
     top: "50%",
@@ -49,7 +50,7 @@ function CreateCableModal(props) {
     console.log(newCable);
     await axios
       .post(
-        `http://134.79.206.193/smcaptar/CreateCable?table=${"SMARTCAPTAR_UPLOAD"}`,
+        `${baseUrl}/CreateCable?table=${"SMARTCAPTAR_UPLOAD"}`,
         { cable: newCable, user: props.user.USERNAME }
       )
       .then(
@@ -82,7 +83,7 @@ function CreateCableModal(props) {
   };
   const updateConnTypes = async (e) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getConnTypes?cableType=${e.target.value}`
+      `${baseUrl}/getConnTypes?cableType=${e.target.value}`
     );
     const data = await response.json();
     setConnTypes(data.types);

@@ -8,7 +8,9 @@ import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import FileUploadView from "../../Modals/FileUploadModal/FileUpload";
 import { JSON2CSV } from "../../CableViewTable/JSON2CSV";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
+
 import FilterBar from "../../FilterBar";
 function SettingsTableView(props) {
   const [users, setUsers] = useState([]);
@@ -64,7 +66,7 @@ function SettingsTableView(props) {
   };
 
   const getUsersAPI = async (p) => {
-    const response = await fetch(`http://134.79.206.193/smcaptar/getAllUsers`);
+    const response = await fetch(`${baseUrl}/getAllUsers`);
     const data = await response.json();
     setUsers(data.users);
     setHeaders(userOrder);
@@ -73,7 +75,7 @@ function SettingsTableView(props) {
   };
   const getProjectsAPI = async (p) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getAllProjects`
+      `${baseUrl}/getAllProjects`
     );
     const data = await response.json();
     setProjects(data.projects);
