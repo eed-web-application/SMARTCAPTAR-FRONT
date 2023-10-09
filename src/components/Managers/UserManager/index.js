@@ -8,7 +8,7 @@ import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import FileUploadView from "../../Modals/FileUploadModal/FileUpload";
 import { JSON2CSV } from "../../CableViewTable/JSON2CSV";
-import baseUrl from "../../config";
+import baseUrl from "../../../config";
 axios.defaults.baseURL = baseUrl;
 
 import FilterBar from "../../FilterBar";

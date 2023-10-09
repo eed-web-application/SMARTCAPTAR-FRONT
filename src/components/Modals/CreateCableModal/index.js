@@ -8,7 +8,7 @@ import { CreateCableOrder } from "../../../Headers/order";
 import axios from "axios";
 import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import { newCableTemp } from "./cableTemp";
-import baseUrl from "../../config";
+import baseUrl from "../../../config";
 const customStyles = {
   content: {
     top: "50%",

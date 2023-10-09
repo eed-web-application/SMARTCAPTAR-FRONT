@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AiFillCloseCircle } from "react-icons/ai";
-import baseUrl from "../../config";
+import baseUrl from "../../../config";
 axios.defaults.baseURL = baseUrl;
 const customStyles = {
   content: {

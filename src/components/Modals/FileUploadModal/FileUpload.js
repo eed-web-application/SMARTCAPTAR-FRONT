@@ -7,7 +7,7 @@ import "./styles.css";
 import { FiUpload } from "react-icons/fi";
 import { ElevatorSharp, RepeatOneSharp } from "@mui/icons-material";
 import Papa from "papaparse";
-import baseUrl from "../../config";
+import baseUrl from "../../../config";
 axios.defaults.baseURL = baseUrl;
 const customStyles = {
   content: {

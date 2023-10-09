@@ -14,7 +14,7 @@ import Modal from "react-modal";
 import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import FilterBar from "../../FilterBar";
-import baseUrl from "../../config";
+import baseUrl from "../../../config";
 axios.defaults.baseURL = baseUrl;
 function ProjectsTableView(props) {
   const [projects, setProjects] = useState([]);

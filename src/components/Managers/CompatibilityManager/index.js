@@ -9,7 +9,7 @@ import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import { JSON2CSV } from "../../CableViewTable/JSON2CSV";
 import FilterBar from "../../FilterBar";
-import baseUrl from "../../config";
+import baseUrl from "../../../config";
 axios.defaults.baseURL = baseUrl;
 import FileUploadView from "../../Modals/FileUploadModal/FileUpload";
 function CompatibilityTableView(props) {
