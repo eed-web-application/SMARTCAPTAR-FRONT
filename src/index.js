@@ -12,7 +12,6 @@ TimeAgo.addDefaultLocale(en);
 TimeAgo.addLocale(ru);
 ReactDOM.render(
   <React.StrictMode>
-    <base href="/path/to/my/app" />
     <App />
   </React.StrictMode>,
   document.getElementById("root")

@@ -46,8 +46,9 @@ RUN npm run build
 # STAGE 2 - build the final image using a nginx web server 
 # distribution and copy the react build files
 FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html/smartcaptar
-
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=build /app/build .
 # needed this to make React Router work properly 
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/conf.d
