@@ -12,7 +12,7 @@ import { Pagination } from "@mui/material";
 import "../CableViewTable/styles.css";
 import { BeatLoader } from "react-spinners";
 import "./styles.css";
-import baseUrl from "../../../config";
+import baseUrl from "../../config";
 
 function RejectedTableView(props) {
   const [cables, setCables] = useState([]);

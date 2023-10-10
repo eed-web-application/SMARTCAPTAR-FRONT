@@ -6,7 +6,7 @@ import MAIL from "../../assets/mail.png";
 import LOCK from "../../assets/lock.png";
 import "./styles.css";
 import { Navigate, Link, useNavigate, useLocation } from "react-router-dom";
-import baseUrl from "../../../config";
+import baseUrl from "../../config";
 axios.defaults.baseURL = baseUrl;
 const Login = (props) => {
   const navigate = useNavigate();

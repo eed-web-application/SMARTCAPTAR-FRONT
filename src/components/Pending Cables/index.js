@@ -12,7 +12,7 @@ import { Pagination } from "@mui/material";
 import "../CableViewTable/styles.css";
 import { BeatLoader } from "react-spinners";
 import "../Pending Cables/styles.css";
-import baseUrl from "../../../config";
+import baseUrl from "../../config";
 function PendingTableView(props) {
   const [cables, setCables] = useState([]);
   const [page, setPage] = useState(1);

@@ -9,7 +9,7 @@ import { BeatLoader } from "react-spinners";
 import SearchModalView from "../Modals/CableInventoryModal";
 import "./styles.css";
 import { AiOutlineSearch } from "react-icons/ai";
-import baseUrl from "../../../config";
+import baseUrl from "../../config";
 function SearchBar(props) {
   const [cable, setCable] = useState([]);
   const [errorMsg, setErrorMessage] = useState(false);
