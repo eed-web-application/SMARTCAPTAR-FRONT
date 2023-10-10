@@ -12,7 +12,7 @@ import { Pagination } from "@mui/material";
 import "../CableViewTable/styles.css";
 import { BeatLoader } from "react-spinners";
 import "../Pending Cables/styles.css";
-
+import baseUrl from "../../../config";
 function PendingTableView(props) {
   const [cables, setCables] = useState([]);
   const [page, setPage] = useState(1);
@@ -24,7 +24,7 @@ function PendingTableView(props) {
 
   const getPendingCablesAPI = async (p) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getPendingCables?offset=${
+      `${baseUrl}/getPendingCables?offset=${
         (p - 1) * 10
       }&table=SMARTCAPTAR_UPLOAD`
     );

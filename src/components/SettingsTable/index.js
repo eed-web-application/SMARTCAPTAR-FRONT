@@ -4,7 +4,7 @@ import { order, tableOrder } from "../../testData/order";
 import Modal from "react-modal";
 import CablesRow from "../TableCableRow/CablesRow";
 import { TablePagination } from "@mui/material";
-
+import baseUrl from "../../../config";
 const customStyles = {
   content: {
     top: "50%",
@@ -42,7 +42,7 @@ function SettingsView(props) {
 
   const getCablesAPI = async (p) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getCables?offset=${p * 20}`
+      `${baseUrl}/getCables?offset=${p * 20}`
     );
     // const responseUp = await fetch(`http://134.79.206.193/smcaptar/uploadCables`);
     const data = await response.json();

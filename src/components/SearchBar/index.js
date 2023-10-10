@@ -9,7 +9,7 @@ import { BeatLoader } from "react-spinners";
 import SearchModalView from "../Modals/CableInventoryModal";
 import "./styles.css";
 import { AiOutlineSearch } from "react-icons/ai";
-
+import baseUrl from "../../../config";
 function SearchBar(props) {
   const [cable, setCable] = useState([]);
   const [errorMsg, setErrorMessage] = useState(false);
@@ -29,7 +29,7 @@ function SearchBar(props) {
   const getCableSearch = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/searchCable?cableNum=${searchTxt}`
+      `${baseUrl}/searchCable?cableNum=${searchTxt}`
     );
     const data = await response.json();
     if (data.cables[0] == undefined) {
