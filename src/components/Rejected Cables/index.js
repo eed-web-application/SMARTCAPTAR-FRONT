@@ -12,6 +12,7 @@ import { Pagination } from "@mui/material";
 import "../CableViewTable/styles.css";
 import { BeatLoader } from "react-spinners";
 import "./styles.css";
+import baseUrl from "../../config";
 
 function RejectedTableView(props) {
   const [cables, setCables] = useState([]);
@@ -24,7 +25,7 @@ function RejectedTableView(props) {
 
   const getRejectedCablesAPI = async (p) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getRejectedCables?offset=${
+      `${baseUrl}/getRejectedCables?offset=${
         (p - 1) * 10
       }&table=SMARTCAPTAR_UPLOAD`
     );

@@ -6,8 +6,8 @@ import MAIL from "../../assets/mail.png";
 import LOCK from "../../assets/lock.png";
 import "./styles.css";
 import { Navigate, Link, useNavigate, useLocation } from "react-router-dom";
-
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
 const Login = (props) => {
   const navigate = useNavigate();
 

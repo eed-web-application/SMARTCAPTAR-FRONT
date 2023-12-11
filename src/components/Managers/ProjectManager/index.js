@@ -14,7 +14,8 @@ import Modal from "react-modal";
 import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import FilterBar from "../../FilterBar";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../../config";
+axios.defaults.baseURL = baseUrl;
 function ProjectsTableView(props) {
   const [projects, setProjects] = useState([]);
   const [page, setPage] = useState(1);
@@ -52,7 +53,7 @@ function ProjectsTableView(props) {
 
   const getProjectsAPI = async (p) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getAllProjects`
+      `${baseUrl}/getAllProjects`
     );
     const data = await response.json();
     console.log(data.projects);

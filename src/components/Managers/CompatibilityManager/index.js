@@ -9,7 +9,8 @@ import { AiFillCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import { JSON2CSV } from "../../CableViewTable/JSON2CSV";
 import FilterBar from "../../FilterBar";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../../config";
+axios.defaults.baseURL = baseUrl;
 import FileUploadView from "../../Modals/FileUploadModal/FileUpload";
 function CompatibilityTableView(props) {
   const [projects, setProjects] = useState([]);
@@ -45,7 +46,7 @@ function CompatibilityTableView(props) {
   };
   const getProjectsAPI = async (p) => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getCompatibility`
+      `${baseUrl}/getCompatibility`
     );
     const data = await response.json();
     console.log(data.compat);

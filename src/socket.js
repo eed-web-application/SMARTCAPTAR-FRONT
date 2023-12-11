@@ -1,7 +1,8 @@
 import { io } from "socket.io-client";
+import baseHost from "../../config";
 
 export const socket = io(
-  "http://134.79.206.193",
+  baseHost,
   { path: "/smcaptar/smcaptar" },
   { transports: ["websocket"] }
 );

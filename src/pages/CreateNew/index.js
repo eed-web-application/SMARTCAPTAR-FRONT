@@ -12,6 +12,7 @@ import { FiUpload } from "react-icons/fi";
 import Lottie from "lottie-react";
 import Loading from "../../assets/loading.json";
 import Success from "../../components/Animations/Success";
+import baseUrl from "../../config";
 const customStyles = {
   content: {
     top: "50%",
@@ -182,7 +183,7 @@ const CreateNew = (props) => {
 
             axios
               .post(
-                `http://134.79.206.193/smcaptar/checkCables?table=${"SMARTCAPTAR_UPLOAD"}`,
+                `${baseUrl}/checkCables?table=${"SMARTCAPTAR_UPLOAD"}`,
                 { cables: cableArr }
               )
               .then(
@@ -218,7 +219,7 @@ const CreateNew = (props) => {
       setLoading(true);
       axios
         .post(
-          `http://134.79.206.193/smcaptar/uploadCables?table=${"SMARTCAPTAR_UPLOAD"}`,
+          `${baseUrl}/uploadCables?table=${"SMARTCAPTAR_UPLOAD"}`,
           {
             cables: cables,
             user: props.user.USERNAME,
