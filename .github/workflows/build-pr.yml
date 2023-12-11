@@ -11,5 +11,5 @@ concurrency:
   cancel-in-progress: true
 jobs:
     build:
-        uses: slaclab/SMCAPTAR_FRONT-Deployment/.github/workflows/build-test.yml@main
+        uses: eed-web-application/SMCAPTAR_FRONT-Deployment/.github/workflows/build-test.yml@main
         secrets: inherit
