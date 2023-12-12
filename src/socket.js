@@ -3,6 +3,6 @@ import baseHost from "../../config";
 
 export const socket = io(
   baseHost,
-  { path: "/smcaptar/smcaptar" },
+  // { path: "/smcaptar/smcaptar" },
   { transports: ["websocket"] }
 );
