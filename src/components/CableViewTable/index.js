@@ -8,7 +8,9 @@ import CablesRow from "../TableCableRow/CablesRow";
 import { TablePagination } from "@mui/material";
 import FilterBar from "../FilterBar/index";
 import axios from "axios";
-axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+// axios.defaults.baseURL = "http://134.79.206.193/smcaptar";
+import baseUrl from "../../config";
+axios.defaults.baseURL = baseUrl;
 import "./styles.css";
 import { BeatLoader } from "react-spinners";
 import Modal from "react-modal";
@@ -102,22 +104,20 @@ function CableInventoryView(props) {
   //Function for getting all cable types and setting the values to the state
   const getTypes = async () => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getCableTypes`
+      `${baseUrl}/getCableTypes`
     );
     const data = await response.json();
     setTypes(data.types);
   };
   //Get all project names and setting it to the state
   const getProjects = async () => {
-    const response = await fetch(`http://134.79.206.193/smcaptar/getProjects`);
+    const response = await fetch(`${baseUrl}/getProjects`);
     const data = await response.json();
     setProjects(data.projects);
   };
   //Get all connector types associated with a cable type
   const getConnTypes = async (CT) => {
-    const response = await fetch(
-      `http://134.79.206.193/smcaptar/getConnTypes?cableType=${CT}`
-    );
+    const response = await fetch(`${baseUrl}/getConnTypes?cableType=${CT}`);
     const data = await response.json();
     setConnTypes(data.types);
   };
@@ -134,11 +134,9 @@ function CableInventoryView(props) {
   //Function used to search CABLEINV once the user clicks submit
   const searchInventory = async () => {
     const response = await fetch(
-      `http://134.79.206.193/smcaptar/getCablesInventory?offset=${
-        (page - 1) * rows
-      }&user=${props.user.USERNAME}&table=${
-        props.table
-      }&searchTxt=${searchTxt}&filter=${filterTerm}`
+      `${baseUrl}/getCablesInventory?offset=${(page - 1) * rows}&user=${
+        props.user.USERNAME
+      }&table=${props.table}&searchTxt=${searchTxt}&filter=${filterTerm}`
     );
     const data = await response.json();
     await setCables(data.cables);
@@ -154,9 +152,9 @@ function CableInventoryView(props) {
     console.log(row);
     if (searchTxt != "" && props.table == "CABLEINV") {
       const response = await fetch(
-        `http://134.79.206.193/smcaptar/getCablesInventory?offset=${
-          (p - 1) * row
-        }&user=${props.user.USERNAME}&table=${
+        `${baseUrl}/getCablesInventory?offset=${(p - 1) * row}&user=${
+          props.user.USERNAME
+        }&table=${
           props.table
         }&searchTxt=${searchTxt}&filter=${filterTerm}&rows=${rows}`
       );
@@ -170,11 +168,9 @@ function CableInventoryView(props) {
       setLoading(false);
     } else if (props.table == "SMARTCAPTAR_HISTORY") {
       const response = await fetch(
-        `http://134.79.206.193/smcaptar/getCables?offset=${
-          (p - 1) * rows
-        }&user=${props.user.USERNAME}&table=${props.table}&CABLENUM=${
-          props.cable
-        }`
+        `${baseUrl}/getCables?offset=${(p - 1) * rows}&user=${
+          props.user.USERNAME
+        }&table=${props.table}&CABLENUM=${props.cable}`
       );
       const data = await response.json();
       await setCables(data.cables);
@@ -183,9 +179,9 @@ function CableInventoryView(props) {
       setLoading(false);
     } else {
       const response = await fetch(
-        `http://134.79.206.193/smcaptar/getCables?offset=${
-          (p - 1) * row
-        }&user=${props.user.USERNAME}&table=${props.table}&rows=${row}`
+        `${baseUrl}/getCables?offset=${(p - 1) * row}&user=${
+          props.user.USERNAME
+        }&table=${props.table}&rows=${row}`
       );
       const data = await response.json();
       await setCables(data.cables);
